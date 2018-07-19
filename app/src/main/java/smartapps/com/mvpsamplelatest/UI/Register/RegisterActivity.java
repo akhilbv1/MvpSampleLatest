@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import javax.inject.Inject;
+
 import smartapps.com.mvpsamplelatest.MvpApp;
 import smartapps.com.mvpsamplelatest.R;
 import smartapps.com.mvpsamplelatest.UI.base.BaseActivity;
@@ -23,7 +25,7 @@ public class RegisterActivity extends BaseActivity implements RegisterMvpView, V
 
     private Button btnRegister;
 
-    private RegisterPresenter registerPresenter;
+    @Inject RegisterPresenter<RegisterMvpView> registerPresenter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -31,7 +33,8 @@ public class RegisterActivity extends BaseActivity implements RegisterMvpView, V
         setContentView(R.layout.activity_register);
         initialiseViewss();
         btnRegister.setOnClickListener(this);
-        registerPresenter = new RegisterPresenter(((MvpApp)getApplication()).getDataManager());
+        getActivityComponent().inject(this);
+        //registerPresenter = new RegisterPresenter(((MvpApp)getApplication()).getDataManager());
         registerPresenter.onAttach(this);
     }
 

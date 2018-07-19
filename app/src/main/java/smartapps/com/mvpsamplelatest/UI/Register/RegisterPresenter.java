@@ -3,6 +3,8 @@ package smartapps.com.mvpsamplelatest.UI.Register;
 import android.support.annotation.NonNull;
 import android.text.TextUtils;
 
+import javax.inject.Inject;
+
 import smartapps.com.mvpsamplelatest.Data.DataManager;
 import smartapps.com.mvpsamplelatest.UI.base.BasePresenter;
 
@@ -11,6 +13,8 @@ import smartapps.com.mvpsamplelatest.UI.base.BasePresenter;
  */
 
 public class RegisterPresenter<V extends RegisterMvpView> extends BasePresenter<V> implements RegisterMvpPresenter<V> {
+
+    @Inject
     public RegisterPresenter(DataManager mDataManager) {
         super(mDataManager);
     }

@@ -3,7 +3,11 @@ package smartapps.com.mvpsamplelatest.Data;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-/**
+import javax.inject.Inject;
+
+import smartapps.com.mvpsamplelatest.Di.Annotation.ApplicationContext;
+
+/*
  * Created by akhil on 18/7/18.
  */
 
@@ -18,7 +22,8 @@ public class SharedPrefHelper {
 
     private SharedPreferences mSharedPreferences;
 
-    public SharedPrefHelper(Context context) {
+    @Inject
+    public SharedPrefHelper(@ApplicationContext Context context) {
         this.mSharedPreferences = context.getSharedPreferences(MY_PREFS, Context.MODE_PRIVATE);
     }
 

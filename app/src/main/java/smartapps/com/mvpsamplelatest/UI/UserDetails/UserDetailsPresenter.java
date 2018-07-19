@@ -2,6 +2,8 @@ package smartapps.com.mvpsamplelatest.UI.UserDetails;
 
 import android.text.TextUtils;
 
+import javax.inject.Inject;
+
 import smartapps.com.mvpsamplelatest.Data.DataManager;
 import smartapps.com.mvpsamplelatest.UI.base.BasePresenter;
 
@@ -11,6 +13,7 @@ import smartapps.com.mvpsamplelatest.UI.base.BasePresenter;
 
 public class UserDetailsPresenter<V extends UserDetailsMvpView> extends BasePresenter<V> implements UserDetailsMvpPresenter<V> {
 
+    @Inject
     public UserDetailsPresenter(DataManager mDataManager) {
         super(mDataManager);
     }

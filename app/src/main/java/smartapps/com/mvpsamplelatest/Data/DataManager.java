@@ -4,10 +4,13 @@ package smartapps.com.mvpsamplelatest.Data;
  * Created by akhil on 18/7/18.
  */
 
+import javax.inject.Inject;
+
 public class DataManager {
 
     private SharedPrefHelper mSharedPref;
 
+    @Inject
     public DataManager(SharedPrefHelper mSharedPref) {
         this.mSharedPref = mSharedPref;
     }

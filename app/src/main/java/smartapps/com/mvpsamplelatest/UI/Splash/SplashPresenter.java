@@ -1,5 +1,7 @@
 package smartapps.com.mvpsamplelatest.UI.Splash;
 
+import javax.inject.Inject;
+
 import smartapps.com.mvpsamplelatest.Data.DataManager;
 import smartapps.com.mvpsamplelatest.UI.base.BasePresenter;
 
@@ -9,6 +11,7 @@ import smartapps.com.mvpsamplelatest.UI.base.BasePresenter;
 
 public class SplashPresenter<V extends SplashMvpView> extends BasePresenter<V> implements SplashMvpPresenter<V> {
 
+    @Inject
     public SplashPresenter(DataManager mDataManager) {
         super(mDataManager);
     }

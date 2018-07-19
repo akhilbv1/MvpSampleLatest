@@ -6,7 +6,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import smartapps.com.mvpsamplelatest.MvpApp;
+import javax.inject.Inject;
+
 import smartapps.com.mvpsamplelatest.R;
 import smartapps.com.mvpsamplelatest.UI.base.BaseActivity;
 
@@ -16,18 +17,17 @@ import smartapps.com.mvpsamplelatest.UI.base.BaseActivity;
 
 public class UserDetailsActivity extends BaseActivity implements UserDetailsMvpView, View.OnClickListener {
 
+    @Inject
+    UserDetailsPresenter<UserDetailsMvpView> userDetailsPresenter;
     private TextView tvEmail;
-
     private Button btnLogout;
-
-    private UserDetailsPresenter<UserDetailsActivity> userDetailsPresenter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initialiseViewss();
-        userDetailsPresenter = new UserDetailsPresenter<>(((MvpApp) getApplication()).getDataManager());
+        getActivityComponent().inject(this);
         userDetailsPresenter.onAttach(this);
         userDetailsPresenter.getUserDetails();
         userDetailsPresenter.setUserLoggedInStatus(true);
@@ -47,6 +47,6 @@ public class UserDetailsActivity extends BaseActivity implements UserDetailsMvpV
 
     @Override
     public void onClick(View v) {
-          userDetailsPresenter.setUserLoggedInStatus(false);
+        userDetailsPresenter.setUserLoggedInStatus(false);
     }
 }

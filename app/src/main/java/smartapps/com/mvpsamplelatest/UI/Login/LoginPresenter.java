@@ -2,6 +2,8 @@ package smartapps.com.mvpsamplelatest.UI.Login;
 
 import android.support.annotation.NonNull;
 
+import javax.inject.Inject;
+
 import smartapps.com.mvpsamplelatest.Data.DataManager;
 import smartapps.com.mvpsamplelatest.UI.base.BasePresenter;
 
@@ -11,6 +13,7 @@ import smartapps.com.mvpsamplelatest.UI.base.BasePresenter;
 
 public class LoginPresenter<V extends LoginMvpView> extends BasePresenter<V> implements LoginMvpPresenter<V> {
 
+    @Inject
     public LoginPresenter(DataManager mDataManager) {
         super(mDataManager);
     }

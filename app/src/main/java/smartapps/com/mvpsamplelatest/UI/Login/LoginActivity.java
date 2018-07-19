@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import javax.inject.Inject;
+
 import smartapps.com.mvpsamplelatest.MvpApp;
 import smartapps.com.mvpsamplelatest.R;
 import smartapps.com.mvpsamplelatest.UI.Register.RegisterActivity;
@@ -26,7 +28,7 @@ public class LoginActivity extends BaseActivity implements LoginMvpView, View.On
 
     private Button login, register;
 
-    private LoginPresenter loginPresenter;
+    @Inject LoginPresenter<LoginMvpView> loginPresenter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -36,7 +38,8 @@ public class LoginActivity extends BaseActivity implements LoginMvpView, View.On
         initialiseViewss();
         login.setOnClickListener(this);
         register.setOnClickListener(this);
-        loginPresenter = new LoginPresenter(((MvpApp) getApplication()).getDataManager());
+        getActivityComponent().inject(this);
+        //loginPresenter = new LoginPresenter(((MvpApp) getApplication()).getDataManager());
         loginPresenter.onAttach(this);
 
     }
