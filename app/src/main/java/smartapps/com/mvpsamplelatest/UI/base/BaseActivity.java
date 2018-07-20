@@ -30,16 +30,19 @@ public class BaseActivity extends AppCompatActivity implements MvpView {
                     .applicationComponent(MvpApp.get(this).getApplicationComponent())
                     .build();
         }
+
+
         return activityComponent;
     }
-
     @Override
     public void initialiseViews() {
 
     }
 
+
+
     //initialise views
-    // private void initiaseViews(){}
+   // private void initiaseViews(){}
 
 
 }

@@ -12,8 +12,7 @@ public class BasePresenter<V extends MvpView> implements MvpPresenter<V> {
 
     private DataManager mDataManager;
 
-    public BasePresenter(DataManager mDataManager)
-    {
+    public BasePresenter(DataManager mDataManager) {
         this.mDataManager = mDataManager;
     }
 
@@ -22,11 +21,16 @@ public class BasePresenter<V extends MvpView> implements MvpPresenter<V> {
         mMvpView = mvpView;
     }
 
-    public V getMvpView(){
+    @Override
+    public void onDetach() {
+        this.mMvpView = null;
+    }
+
+    public V getMvpView() {
         return mMvpView;
     }
 
-    public DataManager getDataManager(){
+    public DataManager getDataManager() {
         return mDataManager;
     }
 

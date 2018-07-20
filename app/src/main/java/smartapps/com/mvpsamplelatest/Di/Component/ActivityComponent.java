@@ -5,6 +5,7 @@ import smartapps.com.mvpsamplelatest.Di.Annotation.perActivity;
 import smartapps.com.mvpsamplelatest.Di.Module.ActivityModule;
 import smartapps.com.mvpsamplelatest.Di.Module.ApplicationModule;
 import smartapps.com.mvpsamplelatest.UI.Login.LoginActivity;
+import smartapps.com.mvpsamplelatest.UI.News.TestActivity;
 import smartapps.com.mvpsamplelatest.UI.Register.RegisterActivity;
 import smartapps.com.mvpsamplelatest.UI.Splash.SplashActivity;
 import smartapps.com.mvpsamplelatest.UI.UserDetails.UserDetailsActivity;
@@ -23,4 +24,6 @@ public interface ActivityComponent {
     void inject(SplashActivity splashActivity);
 
     void inject(UserDetailsActivity userDetailsActivity);
+
+    void inject(TestActivity testActivity);
 }

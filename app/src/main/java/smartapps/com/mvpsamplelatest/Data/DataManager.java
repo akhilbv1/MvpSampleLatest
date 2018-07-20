@@ -6,6 +6,9 @@ package smartapps.com.mvpsamplelatest.Data;
 
 import javax.inject.Inject;
 
+import retrofit2.Call;
+import smartapps.com.mvpsamplelatest.MvpApp;
+
 public class DataManager {
 
     private SharedPrefHelper mSharedPref;
@@ -21,6 +24,10 @@ public class DataManager {
 
     public void addUser(String email, String password) {
         mSharedPref.saveUserCredentials(email, password);
+    }
+
+    public Call<TestResponsePojo> getDetailsCall(){
+        return MvpApp.getRestClient().getRestApi().getDetails();
     }
 
     public String getEmail() {

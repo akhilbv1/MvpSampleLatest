@@ -2,6 +2,7 @@ package smartapps.com.mvpsamplelatest.Data;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.util.Log;
 
 import javax.inject.Inject;
 
@@ -24,6 +25,7 @@ public class SharedPrefHelper {
 
     @Inject
     public SharedPrefHelper(@ApplicationContext Context context) {
+        Log.i("called","has been called twice");
         this.mSharedPreferences = context.getSharedPreferences(MY_PREFS, Context.MODE_PRIVATE);
     }
 

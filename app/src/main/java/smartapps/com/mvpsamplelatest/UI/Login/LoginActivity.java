@@ -30,7 +30,6 @@ public class LoginActivity extends BaseActivity implements LoginMvpView, View.On
 
     @Inject LoginPresenter<LoginMvpView> loginPresenter;
 
-    @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
@@ -43,6 +42,7 @@ public class LoginActivity extends BaseActivity implements LoginMvpView, View.On
         loginPresenter.onAttach(this);
 
     }
+
 
     public void initialiseViewss() {
         super.initialiseViews();
